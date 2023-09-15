@@ -6,7 +6,7 @@ authors = [
 ]
 description = "Querying neuromorpho.org database with Python requests"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 dependencies = [
     "urllib3",
     "requests",
