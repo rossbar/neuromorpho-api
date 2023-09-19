@@ -1,6 +1,6 @@
 [project]
 name = "neuromorpho_api"
-version = "0.1.0"
+version = "0.1"
 authors = [
     { name="Ross Barnowski", email="rossbar@caltech.edu" },
 ]
