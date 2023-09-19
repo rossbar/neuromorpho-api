@@ -17,11 +17,13 @@ pip install neuromorpho-api
 
 >>> neuron_endpoint = "https://neuromorpho.org/api/neuron/"
 >>> resp = requests.get(neuron_endpoint + "fields")
->>> data = resp.json()
->>> data.keys()
-dict_keys(['Neuron Fields'])
->>> list(data["Neuron Fields"])[:5]
-['neuron_id', 'neuron_name', 'archive', 'age_scale', 'gender']
+>>> resp.json()
+{'Neuron Fields': ['neuron_id',
+  'neuron_name',
+  'archive',
+  'age_scale',
+  'gender',
+  ...
 ```
 
 ## What is this package?
@@ -44,12 +46,13 @@ SSLError: HTTPSConnectionPool(host='neuromorpho.org', port=443): Max retries exc
 It appears the key provided by `neuromorpho.org` is incompatible with the
 default Python SSL cipher.
 This package works around this issue using [Robin De Schepper's solution
-solution posted on Stack Overflow](https://stackoverflow.com/a/76217135).
+posted on Stack Overflow](https://stackoverflow.com/a/76217135).
 At some point in the future, the neuromorpho certificate may (hopefully) be
 updated, at which point this package will be archived.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
+:hidden:
 tutorial
 examples
 ```
