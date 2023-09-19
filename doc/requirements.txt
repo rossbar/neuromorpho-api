@@ -1,3 +1,5 @@
 sphinx
 myst-nb
 pydata-sphinx-theme
+# For examples
+pandas
