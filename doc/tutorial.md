@@ -124,7 +124,6 @@ Then we'll arbitrarily select one of the neurons from the previous query for
 our example, and construct SWC url:
 
 ```{code-cell}
-:tags: [hide-output]
 record = random.choice(data)
 record["neuron_name"]
 ```

@@ -51,4 +51,5 @@ updated, at which point this package will be archived.
 ```{toctree}
 :maxdepth: 2
 tutorial
+examples
 ```
