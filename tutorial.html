@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Tutorial &#8212; neuromorpho-api</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="neuromorpho-api" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">neuromorpho-api</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">Search</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">Search</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="examples.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Tutorial</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
+<p>A quick runthrough demonstrating basic API queries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neuromorpho_api</span> <span class="kn">import</span> <span class="n">requestor</span> <span class="k">as</span> <span class="n">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, it may not be necessary to use the <code class="docutils literal notranslate"><span class="pre">requestor</span></code> object, which is
+only provided as a convenient workaround for SSL issues. In that case,
+replace the above import statement with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">requests</span></code> directly!</p>
+</div>
+<section id="neuron-metadata">
+<h2>Neuron metadata<a class="headerlink" href="#neuron-metadata" title="Permalink to this heading">#</a></h2>
+<p>Let’s start in the same place as the <a class="reference external" href="https://neuromorpho.org/apiReference.html#neuron-id">neuromorpho.org API reference docs</a>:
+grabbing metadata for a single neuron by neuron id.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://neuromorpho.org/api/&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span> <span class="o">+</span> <span class="s2">&quot;neuron/id/1&quot;</span><span class="p">)</span>
+<span class="c1"># Check that the status_code is 200 and raise if not</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;neuron_id&#39;: 1,
+ &#39;neuron_name&#39;: &#39;cnic_001&#39;,
+ &#39;archive&#39;: &#39;Wearne_Hof&#39;,
+ &#39;note&#39;: &#39;When originally released, this reconstruction had been incompletely processed, and this issue was fixed in release 6.1 (May 2015). The pre-6.1 version of the processed file is available for download &lt;a href=&quot; dableFiles/previous/v6.1/wearne_hof/cnic_001.CNG.swc &quot;&gt;here&lt;/a&gt;.&#39;,
+ &#39;age_scale&#39;: &#39;Year&#39;,
+ &#39;gender&#39;: &#39;Male/Female&#39;,
+ &#39;age_classification&#39;: &#39;old&#39;,
+ &#39;brain_region&#39;: [&#39;neocortex&#39;, &#39;prefrontal&#39;, &#39;layer 3&#39;],
+ &#39;cell_type&#39;: [&#39;Local projecting&#39;, &#39;pyramidal&#39;, &#39;principal cell&#39;],
+ &#39;species&#39;: &#39;monkey&#39;,
+ &#39;strain&#39;: &#39;Rhesus&#39;,
+ &#39;scientific_name&#39;: &#39;Macaca mulatta&#39;,
+ &#39;stain&#39;: &#39;lucifer yellow&#39;,
+ &#39;experiment_condition&#39;: [&#39;Control&#39;],
+ &#39;protocol&#39;: &#39;in vivo&#39;,
+ &#39;slicing_direction&#39;: &#39;custom&#39;,
+ &#39;reconstruction_software&#39;: &#39;Neurozoom&#39;,
+ &#39;objective_type&#39;: &#39;Not reported&#39;,
+ &#39;original_format&#39;: &#39;Neurozoom.swc&#39;,
+ &#39;domain&#39;: &#39;Dendrites, Soma, No Axon&#39;,
+ &#39;attributes&#39;: &#39;Diameter, 3D, Angles&#39;,
+ &#39;magnification&#39;: &#39;100&#39;,
+ &#39;upload_date&#39;: &#39;2006-08-01&#39;,
+ &#39;deposition_date&#39;: &#39;2005-12-31&#39;,
+ &#39;shrinkage_reported&#39;: &#39;Reported&#39;,
+ &#39;shrinkage_corrected&#39;: &#39;Not Corrected&#39;,
+ &#39;reported_value&#39;: None,
+ &#39;reported_xy&#39;: None,
+ &#39;reported_z&#39;: None,
+ &#39;corrected_value&#39;: None,
+ &#39;corrected_xy&#39;: None,
+ &#39;corrected_z&#39;: None,
+ &#39;soma_surface&#39;: &#39;834.0&#39;,
+ &#39;surface&#39;: &#39;8842.91&#39;,
+ &#39;volume&#39;: &#39;4725.89&#39;,
+ &#39;slicing_thickness&#39;: &#39;400&#39;,
+ &#39;min_age&#39;: &#39;24.0&#39;,
+ &#39;max_age&#39;: &#39;25.0&#39;,
+ &#39;min_weight&#39;: &#39;4500.0&#39;,
+ &#39;max_weight&#39;: &#39;10000.0&#39;,
+ &#39;png_url&#39;: &#39;http://neuromorpho.org/images/imageFiles/Wearne_Hof/cnic_001.png&#39;,
+ &#39;reference_pmid&#39;: [&#39;12204204&#39;, &#39;12902394&#39;],
+ &#39;reference_doi&#39;: [&#39;10.1016/S0306-4522(02)00305-6&#39;, &#39;10.1093/cercor/13.9.950&#39;],
+ &#39;physical_Integrity&#39;: &#39;Dendrites Moderate&#39;,
+ &#39;_links&#39;: {&#39;self&#39;: {&#39;href&#39;: &#39;http://neuromorpho.org/api/neuron/id/1&#39;},
+  &#39;measurements&#39;: {&#39;href&#39;: &#39;http://neuromorpho.org/api/morphometry/id/1&#39;},
+  &#39;persistence_vector&#39;: {&#39;href&#39;: &#39;http://neuromorpho.org/api/pvec/id/1&#39;}}}
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="neuron-query">
+<h2>Neuron query<a class="headerlink" href="#neuron-query" title="Permalink to this heading">#</a></h2>
+<p>In practice, it is unlikely you will know the neuromorpho id(s) of the
+neuron(s) you’re interested in.
+This is where <code class="docutils literal notranslate"><span class="pre">requests</span></code> really comes in handy, allowing you to
+<a class="reference external" href="https://neuromorpho.org/apiReference.html#neuron-query">specify the parameters supported by the neuromorpho api</a> with
+Python dictionaries.</p>
+<p>For example, let’s construct a query to select all neurons by name from a
+single image in the Siegert archive:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neuron name - note the `*` wildcard to select all neurons whose name matches</span>
+<span class="c1"># this pattern</span>
+<span class="n">siegert_dataset</span> <span class="o">=</span> <span class="s2">&quot;CB_CKp25_2w_F_Animal01_*&quot;</span>
+
+<span class="c1"># The GET parameters</span>
+<span class="n">query_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;neuron_name:</span><span class="si">{</span><span class="n">siegert_dataset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span> <span class="o">+</span> <span class="s2">&quot;neuron/select/&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">query_params</span><span class="p">)</span>
+<span class="c1"># We let requests handle the URL construction</span>
+<span class="n">r</span><span class="o">.</span><span class="n">url</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://neuromorpho.org/api/neuron/select/?q=neuron_name%3ACB_CKp25_2w_F_Animal01_%2A&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data for multiple neurons is returned in the form of a nested dict from
+which individual neuron metadata can be extracted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Make sure the request was successful</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;_embedded&quot;</span><span class="p">][</span><span class="s2">&quot;neuronResources&quot;</span><span class="p">]</span>
+<span class="sa">f</span><span class="s2">&quot;Number of neurons matching query: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Number of neurons matching query: 15&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Individual neuron names</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">&quot;neuron_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CB_CKp25_2w_F_Animal01_Trace001&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace002&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace003&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace004&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace005&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace006&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace007&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace008&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace009&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace010&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace011&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace012&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace013&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace014&#39;,
+ &#39;CB_CKp25_2w_F_Animal01_Trace015&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="neuron-traces">
+<h2>Neuron traces<a class="headerlink" href="#neuron-traces" title="Permalink to this heading">#</a></h2>
+<p>Up to this point, we’ve only demonstrated how to extract the neuron metadata
+available via the neuromorpho API.</p>
+<p>Individual SWC traces are also accessible via <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, albeit from
+different URLs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Accessing SWC files does not appear to be part of the public neuromorpho API,
+so the recipe below may not generalize to all datasets. It should however
+give you a rough idea of how the data appear to be organized.</p>
+</div>
+<p>The general form of URLs for the SWC data include three parameters:</p>
+<ol class="arabic simple">
+<li><p>The archive name</p></li>
+<li><p>The data version (e.g. <code class="docutils literal notranslate"><span class="pre">Source-Version</span></code> or <code class="docutils literal notranslate"><span class="pre">CNG</span> <span class="pre">version</span></code> for original or
+standardized versions, respectively), and</p></li>
+<li><p>The neuron name</p></li>
+</ol>
+<p>Items 1 and 3 can be extracted from the neuron metadata, while item 2 specifies
+which version of SWC file you want.</p>
+<p>Let’s return to our previous query of the Seigert data and download the SWC
+data for one of the neurons.</p>
+<p>Let’s start by codifying the above with a string template:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="c1"># A general-ish URL template for accessing SWC data</span>
+<span class="n">swc_url_template</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span>
+    <span class="s2">&quot;https://neuromorpho.org/dableFiles/$archive/$version/$fname.swc&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we’ll arbitrarily select one of the neurons from the previous query for
+our example, and construct SWC url:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">record</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">record</span><span class="p">[</span><span class="s2">&quot;neuron_name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CB_CKp25_2w_F_Animal01_Trace009&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct the SWC URL for the original (source) version of this specific neuron</span>
+<span class="n">swc_url</span> <span class="o">=</span> <span class="n">swc_url_template</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span>
+    <span class="n">archive</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">&quot;archive&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;Source-Version&quot;</span><span class="p">,</span>
+    <span class="n">fname</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">&quot;neuron_name&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">swc_url</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://neuromorpho.org/dableFiles/siegert/Source-Version/CB_CKp25_2w_F_Animal01_Trace009.swc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we download the data. Note the <code class="docutils literal notranslate"><span class="pre">raise_for_status</span></code> is particularly
+helpful here to catch issues with our URL template.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">swc_url</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If all went well, the SWC data should be available in the response’s <code class="docutils literal notranslate"><span class="pre">content</span></code>
+as a byte-string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">raw_data</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="11" valign="top">NaN</th>
+      <th>1</th>
+      <th>1</th>
+      <th>41.318</th>
+      <th>34.824</th>
+      <th>0.606</th>
+      <th>0.689</th>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>3</th>
+      <th>41.471</th>
+      <th>34.929</th>
+      <th>0.944</th>
+      <th>0.472</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>3</th>
+      <th>41.625</th>
+      <th>35.032</th>
+      <th>1.187</th>
+      <th>0.400</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>3</th>
+      <th>41.776</th>
+      <th>35.143</th>
+      <th>1.362</th>
+      <th>0.400</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>3</th>
+      <th>41.920</th>
+      <th>35.252</th>
+      <th>1.513</th>
+      <th>0.400</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2038</th>
+      <th>3</th>
+      <th>42.720</th>
+      <th>37.039</th>
+      <th>9.811</th>
+      <th>0.400</th>
+      <td>2037</td>
+    </tr>
+    <tr>
+      <th>2039</th>
+      <th>3</th>
+      <th>42.539</th>
+      <th>37.104</th>
+      <th>10.047</th>
+      <th>0.400</th>
+      <td>2038</td>
+    </tr>
+    <tr>
+      <th>2040</th>
+      <th>3</th>
+      <th>42.328</th>
+      <th>37.139</th>
+      <th>10.263</th>
+      <th>0.400</th>
+      <td>2039</td>
+    </tr>
+    <tr>
+      <th>2041</th>
+      <th>3</th>
+      <th>42.167</th>
+      <th>37.125</th>
+      <th>10.488</th>
+      <th>0.400</th>
+      <td>2040</td>
+    </tr>
+    <tr>
+      <th>2042</th>
+      <th>3</th>
+      <th>42.092</th>
+      <th>37.057</th>
+      <th>10.741</th>
+      <th>0.400</th>
+      <td>2041</td>
+    </tr>
+  </tbody>
+</table>
+<p>2042 rows × 1 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">neuromorpho-api</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="examples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-metadata">Neuron metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-query">Neuron query</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-traces">Neuron traces</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/tutorial.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Ross Barnowski (rossbar).
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
