@@ -26,6 +26,13 @@ pip install neuromorpho-api
   ...
 ```
 
+See the tutorial for more detailed examples, including
+[selecting neurons by attribute pattern matching][nmapi-selection] and
+[downloading SWC traces][nmapi-swc].
+
+[nmapi-selection]: https://neuromorpho-api.readthedocs.io/en/latest/tutorial.html#neuron-query
+[nmapi-swc]: https://neuromorpho-api.readthedocs.io/en/latest/tutorial.html#neuron-traces
+
 ## What is this package?
 
 The `neuromorpho-api` package provides a `requests.Session` instance with a
