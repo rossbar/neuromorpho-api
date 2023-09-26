@@ -1,0 +1,31 @@
+name: test
+
+on:
+  schedule:
+    # An arbitrary, off-hour time; once per week
+    - cron: '31 19 * * 6'
+
+jobs:
+  scheduled_test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package & test framework
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r tests/requirements.txt
+          python -m pip install .
+          python -m pip list
+
+      - name: Run tests
+        run: |
+          pytest .
