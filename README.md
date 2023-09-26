@@ -57,3 +57,24 @@ This package works around this issue using [Robin De Schepper's solution
 posted on Stack Overflow](https://stackoverflow.com/a/76217135).
 At some point in the future, the neuromorpho certificate may (hopefully) be
 updated, at which point this package will be archived.
+
+### Future compatibility
+
+The `requestor` provided by this package is intended as a temporary workaround
+for the current DH key issue with neuromorpho.org.
+If the neuromorpho.org certificate is updated, the `requestor` with the custom
+SSLContext will no longer be necessary, and users can switch to using
+`requests` directly.
+Therefore, the following import alias is recommended:
+
+```python
+from neuromorpho-api import requestor as requests
+```
+
+With an updated certificate, the above can be changed to:
+
+```python
+import requests
+```
+
+and all code that depends on `requests.get` should continue to work as expected.
