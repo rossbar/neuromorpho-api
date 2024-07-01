@@ -4,7 +4,7 @@ neuromorpho-api
 Querying the [neuromorpho.org](https://neuromorpho.org/) database in Python
 with [requests](https://pypi.org/project/requests/).
 
-## Update: 05-2024
+```{admonition} Update: 05-2024
 
 As of May 2024, the SSL key for neuromorpho.org has been updated, and the
 workaround packaged here is no longer necessary!
@@ -12,6 +12,7 @@ The [requests](https://pypi.org/project/requests/) package can now be used
 directly with the neuromorpho.org API.
 This project will be archived, though the documentation will remain live and
 updated to demonstrate programmatic access of neuromorpho data.
+```
 
 ## Quickstart
 
