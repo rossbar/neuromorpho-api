@@ -4,16 +4,19 @@ neuromorpho-api
 Querying the [neuromorpho.org](https://neuromorpho.org/) database in Python
 with [requests](https://pypi.org/project/requests/).
 
-## Installation
+## Update: 05-2024
 
-```bash
-pip install neuromorpho-api
-```
+As of May 2024, the SSL key for neuromorpho.org has been updated, and the
+workaround packaged here is no longer necessary!
+The [requests](https://pypi.org/project/requests/) package can now be used
+directly with the neuromorpho.org API.
+This project will be archived, though the documentation will remain live and
+updated to demonstrate programmatic access of neuromorpho data.
 
 ## Quickstart
 
 ```python
->>> from neuromorpho_api import requestor as requests
+>>> import requests
 
 >>> neuron_endpoint = "https://neuromorpho.org/api/neuron/"
 >>> resp = requests.get(neuron_endpoint + "fields")
@@ -33,13 +36,17 @@ See the tutorial for more detailed examples, including
 [nmapi-selection]: https://neuromorpho-api.readthedocs.io/en/latest/tutorial.html#neuron-query
 [nmapi-swc]: https://neuromorpho-api.readthedocs.io/en/latest/tutorial.html#neuron-traces
 
-## What is this package?
+---
+
+## What ~~is~~ was this package?
 
 The `neuromorpho-api` package provides a `requests.Session` instance with a
 custom `SSLContext` needed for interacting with
 [neuromorpho.org](https://neuromorpho.org/).
 
 ### Why can't I just use `requests` directly?
+
+#### NOTE: should no longer be an issue as of 05-24
 
 You may see something like the following:
 
