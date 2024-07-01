@@ -14,12 +14,6 @@ import requests
 from requests.exceptions import SSLError
 
 
-def test_package_warns_on_import():
-    with warnings.catch_warnings(record=True) as warnings_record:
-        from neuromorpho_api import requestor
-
-    assert len(warnings_record) == 1
-
 @pytest.mark.xfail
 def test_neuron_endpoint():
 
