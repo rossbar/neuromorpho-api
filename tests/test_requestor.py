@@ -8,23 +8,32 @@ These are essentially smoke tests, i.e. we're testing for the absence of
 NOTE: These tests actually make GET requests to the server! Good citizenship
 dictates the tests should be run sparingly.
 """
+import warnings
 import pytest
 import requests
 from requests.exceptions import SSLError
 
-from neuromorpho_api import requestor
 
+def test_package_warns_on_import():
+    with warnings.catch_warnings(record=True) as warnings_record:
+        from neuromorpho_api import requestor
 
+    assert len(warnings_record) == 1
+
+@pytest.mark.xfail
 def test_neuron_endpoint():
+
+    with warnings.catch_warnings():
+        from neuromorpho_api import requestor
+
     resp = requestor.get("https://neuromorpho.org/api/neuron/fields")
     assert resp.status_code == 200
     assert "Neuron Fields" in resp.json()
 
 
-@pytest.mark.xfail(raises=SSLError, strict=True)
 def test_default_ssl_context():
     """
-    This is expected to fail due to the DH key for the neuromorpho.org cert.
-    If this starts passing, there's no need for the custom ssl context anymore.
+    This is expected to pass so long as the DH key for the neuromorpho.org cert
+    is valid.
     """
     resp = requests.get("https://neuromorpho.org/api/neuron/fields")

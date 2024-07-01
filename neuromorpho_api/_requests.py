@@ -3,6 +3,19 @@ from urllib3 import PoolManager
 from requests.adapters import HTTPAdapter
 from requests import Session
 
+import warnings
+
+
+warnings.filterwarnings("always")
+warnings.warn(
+    (
+        "\n\nThe neuromorpho_api package is no longer needed to access neuromorpho.org\n"
+        "data from Python. Use `requests` directly instead."
+    ),
+    DeprecationWarning,
+)
+
+
 __all__ = ["requestor"]
 
 _baseurl = "https://neuromorpho.org"
