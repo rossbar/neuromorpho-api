@@ -26,6 +26,15 @@ keywords = [
     "neuron",
 ]
 
+[tool.setuptools]
+zip-safe = false
+include-package-data = false
+packages = ['neuromorpho_api', 'neuromorpho_api.tests']
+
+[tool.setuptools.package-data]
+neuromorpho_api = ['tests/*.py']
+
+
 [project.urls]
 "Source Code" = "https://github.com/rossbar/neuromorpho-api"
 Documentation = "https://neuromorpho-api.readthedocs.io/en/latest/"
