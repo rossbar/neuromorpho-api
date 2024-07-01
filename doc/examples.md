@@ -25,7 +25,7 @@ morphometry, and neuron persistence vectors, respectively.
 ## Neuron
 
 ```{code-cell}
-from neuromorpho_api import requestor as requests
+import requests
 neuron_endpoint = "https://neuromorpho.org/api/neuron"
 ```
 

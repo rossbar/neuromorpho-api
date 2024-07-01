@@ -13,6 +13,8 @@ release = '0.1.1'
 
 # -- General configuration ---------------------------------------------------
 extensions = ["myst_nb"]
+myst_enable_extensions = ["strikethrough"]
+suppress_warnings = ["myst.strikethrough"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

@@ -16,13 +16,7 @@ kernelspec:
 A quick runthrough demonstrating basic API queries.
 
 ```{code-cell}
-from neuromorpho_api import requestor as requests
-```
-
-```{note}
-In the future, it may not be necessary to use the `requestor` object, which is
-only provided as a convenient workaround for SSL issues. In that case,
-replace the above import statement with `import requests` directly!
+import requests
 ```
 
 ## Neuron metadata
